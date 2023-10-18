@@ -18,10 +18,17 @@ describe Mastermind do
     expect(mastermind.evaluate(win_combination, guess_combination)).to eq([0,0])
   end
 
-  it 'given a two color rigth combination should return [2,0]' do
+  it 'given a two color right combination should return [2,0]' do
     guess_combination = ['red', 'blue']
     win_combination = ['red', 'blue']
 
     expect(mastermind.evaluate(win_combination, guess_combination)).to eq([2,0])
+  end
+
+  it 'given a two color wrong combination should return [1,0]' do
+    guess_combination = ['green', 'blue']
+    win_combination = ['green', 'yellow']
+
+    expect(mastermind.evaluate(win_combination, guess_combination)).to eq([1,0])
   end
 end
