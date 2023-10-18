@@ -17,4 +17,11 @@ describe Mastermind do
 
     expect(mastermind.evaluate(win_combination, guess_combination)).to eq([0,0])
   end
+
+  it 'should return [0,0] when guesser combination is yellow and win combination is blue' do
+    guess_combination = ['yellow']
+    win_combination = ['blue']
+
+    expect(mastermind.evaluate(win_combination, guess_combination)).to eq([0,0])
+  end
 end
